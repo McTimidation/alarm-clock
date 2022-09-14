@@ -1,0 +1,22 @@
+html {
+    margin: 0px;
+
+}
+
+body {
+    background-color: #F7BE80;
+}
+
+#clockBox {
+border: 2px solid black;
+margin: auto;
+width: 50%;
+
+}
+
+#time {
+    background-color: white;
+    text-align: center;
+
+}
+
