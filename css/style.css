@@ -8,15 +8,22 @@ body {
 }
 
 #clockBox {
-border: 2px solid black;
+
 margin: auto;
 width: 50%;
+height: 50%;
 
 }
 
 #time {
+    padding: 50px;
     background-color: white;
+    border: 2px solid black;
     text-align: center;
+    font-family: 'Special Elite', cursive;
+    height: 20%;
+    font-size: xx-large;
+
 
 }
 
