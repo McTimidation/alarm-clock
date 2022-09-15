@@ -2,14 +2,17 @@
 const time = document.getElementById('time');
 
  
+const alarm = document.getElementById('alarmTime');
+
 function getTime() {
-    const date = new Date();// AHA MOMENT! - Declaring this outside of your function will cause your function 
-                            //          to reference the time the const is declared
+    const date = new Date();    
+   
+
     time.textContent = date.toLocaleTimeString();
-    if (time.textContent === '10:50:00 PM'){
-        alert("It's 10:50!")
     }
-}
+
+document.getElementById("alarmSet").addEventListener("click", console.log(alarm));
+
 
 
 

@@ -5,6 +5,11 @@ html {
 
 body {
     background-color: #F7BE80;
+    font-family: 'Special Elite', cursive;
+}
+
+button {
+    
 }
 
 #clockBox {
@@ -20,7 +25,6 @@ height: 50%;
     background-color: white;
     border: 2px solid black;
     text-align: center;
-    font-family: 'Special Elite', cursive;
     height: 20%;
     font-size: xx-large;
 
