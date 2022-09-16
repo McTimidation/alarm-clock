@@ -1,0 +1,30 @@
+html {
+    margin: 0px;
+
+}
+
+body {
+    background-color: #F7BE80;
+    font-family: 'Special Elite', cursive;
+}
+
+
+#clockBox {
+
+margin: auto;
+width: 50%;
+height: 50%;
+
+}
+
+#time {
+    padding: 50px;
+    background-color: white;
+    border: 2px solid black;
+    text-align: center;
+    height: 20%;
+    font-size: xx-large;
+
+
+}
+
