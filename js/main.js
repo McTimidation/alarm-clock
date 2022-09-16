@@ -6,47 +6,60 @@ const alarmTime = document.getElementById('alarmTime');
 const alarmBtn = document.getElementById('alarmSet');
 
 const alarm = document.createElement('p');
-        alarm.setAttribute('id','alarm');
         document.getElementById('clockBox').appendChild(alarm);
 
 const clearBtn = document.getElementById('clearAlarm');
 
+
+function getTime() {
+    const date = new Date();
+    let timeString = date.toLocaleTimeString();
+    let newTimeString = timeString.split(':');
+    alarmHours = newTimeString[0];
+    minutes = newTimeString[1];
+    otherString = newTimeString[2];
+    let secAMPM = otherString.split(' ');
+    seconds = secAMPM[0];
+    amOrPm = secAMPM[1];
+
+    time.textContent = `${alarmHours}`+':'+`${minutes}`+':'+`${seconds}`+' '+`${amOrPm}`
+    }
 
 
 
 // this function gets the current time down to the second, then sets that time as a string and uses it as the textContent for the 
 // div with the id of 'time'
 
-function getTime() {
-    const date = new Date();
-    time.textContent = date.toLocaleTimeString();
-    if (time.textContent.slice(0,5).startsWith(alarm.textContent.slice(0,5)) && alarm.textContent.includes(time.textContent.slice(9) )) {
-        alert("It's " + alarm.textContent);
-    }
-}
+// function getTime() {
+    // const date = new Date();
+    // time.textContent = date.toLocaleTimeString();
+    // if (time.textContent.slice(0,5).startsWith(alarm.textContent.slice(0,5)) && alarm.textContent.includes(time.textContent.slice(9) )) {
+        // alert("It's " + alarm.textContent);
+    // }
+// }
 
     function alarmChange() {
-        if (alarmTime.Value !== ''){
-        let timeSplit = alarmTime.value.split(':'),
-        hours = timeSplit[0];
-        minutes = timeSplit[1];
-        Number(hours);
-        Number(minutes);
-        if (hours > 12) {
-            amOrPm = 'PM';
-            hours -= 12;
-        } else if (hours < 12) {
-            amOrPm = 'AM';
-            if (hours == 0) {
-                hours = 12;
-                amOrPm = 'AM';
-            } else {
-                amOrPm = 'PM';
-            }}
         
-        alarm.textContent = `${hours}`+':'+`${minutes}`+' '+`${amOrPm}`;
-    }
-}
+        let timeSplit = alarmTime.value.split(':'),
+        alarmHours = timeSplit[0];
+        alarmMinutes = timeSplit[1];
+        Number(alarmHours);
+        Number(alarmMinutes);
+        if (alarmHours > 12) {
+            amOrPm = 'PM';
+            alarmHours -= 12;
+        } else if (alarmHours < 12) {
+            amOrPm = 'AM';
+            if (alarmHours == 12) {
+                amOrPm = 'PM';
+            } else if (alarmHours == 0) {
+                alarmHours = 12;
+                amOrPm = 'AM';
+            }
+        }
+        alarm.textContent = `${alarmHours}`+':'+`${alarmMinutes}`+' '+`${amOrPm}`;
+            
+        }
 
 
 
@@ -77,16 +90,15 @@ function getTime() {
 // }
 
 function removeAlarm() {
-    if (alarm.textContent !== '') {
-        alarm.remove();
+        alarm.remove;
     }
-}
 
 
+clearBtn.addEventListener('click', removeAlarm);
 
 alarmBtn.addEventListener('click', alarmChange);
 
-clearBtn.addEventListener('click', removeAlarm);
+
 
 
 // calls the getTime function every second
