@@ -9,6 +9,12 @@ const alarm = document.createElement('p');
         document.getElementById('clockBox').appendChild(alarm);
 
 const clearBtn = document.getElementById('clearAlarm');
+let alarmHours;
+let alarmMinutes;
+let hours;
+let minutes;
+let amOrPm;
+let noonNight;
 
 
 function getTime() {
@@ -27,10 +33,10 @@ function getTime() {
 
     function alarmChange() {
 
-        let timeSplit = alarmTime.value.split(':'),
+        let timeSplit = alarmTime.value.split(':');
         alarmHours = timeSplit[0];
         alarmMinutes = timeSplit[1];
-        Number(alarmHours);
+        alarmHours.toString();
         Number(alarmMinutes);
         if (alarmHours > 12) {
             amOrPm = 'PM';
@@ -45,17 +51,9 @@ function getTime() {
             }
         }
         alarm.textContent = `${alarmHours}`+':'+`${alarmMinutes}`+' '+`${amOrPm}`;
-            
+        console.log(alarmHours, alarmMinutes, amOrPm, '=', hours, minutes, noonNight)
         
-
     }
-
-    
-        
-        
-    
-
-    
     alarmBtn.addEventListener('click', alarmChange);
     
     }
@@ -138,7 +136,12 @@ clearBtn.addEventListener('click', removeAlarm);
 // calls the getTime function every second
 setInterval(getTime, 1000);
 
-if (`${alarmHours}` === `${hours}` && `${alarmMinutes}` === `${minutes}` && `${amOrPm}` === `${noonNight}`) {
+if 
+(`${alarmHours}` === `${hours}`
+&& 
+`${alarmMinutes}` === `${minutes}`
+&& 
+`${amOrPm}` === `${noonNight}`) {
     alert("Wake up!!!");
 }
 
